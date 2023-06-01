@@ -13,19 +13,21 @@
     
     <form>
 
-     FirstName  <input type="text" placeholder="FirstName" pattern="*[a-zA-Z]" oninvalid="setCustomValidity('Please enter alphabets only')" required><br>
+    <label>FirstName  <input type="text" placeholder="FirstName" pattern="*[a-zA-Z]"  required></label> <br>
 <br>
 
-      LastName  <input type="text" placeholder="LastName" pattern="*[a-zA-Z]" oninvalid="setCustomValidity('Please enter alphabets only')" required><br>
+     <label> LastName  <input type="text" placeholder="LastName" pattern="*[a-zA-Z]"  required></label><br>
       <br>
 
-      Email  <input type="text" placeholder="Email" required><br>
+    <label>Email  <input type="text" placeholder="Email" required></label>  <br>
       <br>
 
-      Password  <input type="password" placeholder="Password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])" required/><br>
+     <label> Password  <input type="password" placeholder="Password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])" 
+      onchange="onchange()" required/><br></label>
    <br>
 
-      Re-type Password  <input type="password" placeholder="Re-type Password" minlength="8" required/><br>
+     <label>Re-type Password  <input type="password" placeholder="Re-type Password" name="confirm" minlength="8" 
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])" onchange="onchange()" required/></label> <br>
     <br>
 
         <input type="radio" name="gender">
