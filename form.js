@@ -1,13 +1,50 @@
-function onchange() {
-    const password = document.querySelector('input[name=password]');
-    const confirm = document.querySelector('input[name=confirm]');
+// A function to check if passwords match 
+function confirmPassword() {
+    let Pass1 = document.getElementById('pword');
+    let pass2 = document.getElementById('confirm');
 
-    if (confirm.value=== password.value) {
-        confirm.setCustomValidity('');
-    } else {
-        confirm.setCustomValidity('Passwords do not match')
+
+if ((Pass1.value !== '') && (pass2.value !== '')) {
+    if (Pass1.value === pass2.value) {
+        document.getElementById('errMsg').innerHTML='password Match'
+    }
+     else {
+        document.getElementById('errMsg').innerHTML='password does not match'
+     }
+}  else {
+    document.getElementById('errMsg').innerHTML = '';
+}
+}
+
+//A funtion to show or hide Password
+function ShowHide() {
+    let PW1 = document.getElementById('pword');
+    let PW2 = document.getElementById('confirm');
+
+    if (PW1.type === 'password' && PW2.type === 'password') {
+        PW1.type = 'text';
+        PW2.type = 'text';
+    } 
+    else {
+        PW1.type = 'password';
+        PW2.type= 'password'
     }
 }
+
+//Using Regex to check password Strength 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function PasswordStrength(input_string) {
