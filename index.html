@@ -9,9 +9,11 @@
     <title>A Simple Registration Form</title>
 </head>
 <body>
+
     
         <h2>Registration Form</h2>
         <div>
+            <table>
     <form>
             <p>Please fill in this form to create an account</p>
     
@@ -31,13 +33,17 @@
                      <label>Re-type Password  
                     <input type="password" placeholder="Confirm Password" id="confirm"  onkeyup="confirmPassword()" onclick="ShowHide()" autocomplete="off" required/>
                     </label>
-                    
+
                     <br>
                     <br>
                     <input type = "checkbox" onclick="ShowHide()"> Show Password
                     <p id="errMsg"></p>
-                    <br>
-                    <br>
+                    
+
+            <input type="checkbox" onclick="Remember()"> Remember Me
+
+        <br>
+        <br>
 
                     <input type="radio" name="gender">
 
@@ -48,12 +54,19 @@
                     <label for="Female">Female</label>
                     
    
+    <br>
     
-      
-        <input type="submit" value="Register">
+    <p>By creating an account, you agree to our <a href="#">Terms and Conditions</a></p>
 
-       <p>By creating an account, you agree to our <a href="#">Terms and Conditions</a></p>
+    <br>
+
+        <input type="submit" value="Register" class="Register-btn">
+
+       
     </form>
 </div>
+    </table>
+       
+   
 </body>
 </html>
