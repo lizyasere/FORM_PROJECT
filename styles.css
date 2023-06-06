@@ -1,14 +1,12 @@
-hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+body {
+    background-color: rgba(255, 173, 80, 0.74);
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 25px;
+    height: 100%;
+    width: 100%;
 }
 
-.Registerbtn {
-    background-color: lightseagreen;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    width: 100%;
-    cursor: pointer;g
+input {
+    
 }

@@ -7,15 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <label> Password  
-        <input type="password" placeholder="Password" onkeyup="testFx()" required/><br></label>
-    </form>
+    <h1>Password strenght Test</h1>
 
-    <script>
-        function testFx() {
-            console.log('change')
+    <div id="strength-meter" class="strength-meter"></div>
+    <input value="password" type="text" autofocus aria-labelledby="password" id="password-input" class="password-input">
+    <div id="reasons" class="reasons"></div>
+   
+<script>
+const strengthMeter = document.getElementById('strength-meter')
+const passwordInput = document.getElementById('password-input')
+const reasonsContainer = document.getElementById('reasons')
+
+
+function CalcPasswordStrength(password) {
+    const weaknesses = []
+    weaknesses.push()
+    return weaknesses
+}
+
+function lengthWeakness(password) {
+    const length = password.length
+
+    if (length <= 5) {
+        return {
+            message: 'Your password is too short',
+            deduction: 40
         }
-    </script>
+    }
+
+    if (length <= 10) {
+        return {
+            message: 'Your password could be longer',
+            deduction: 15
+        }
+    }
+}
+
+
+</script>
+   
 </body>
 </html>
