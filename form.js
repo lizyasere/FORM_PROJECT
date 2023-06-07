@@ -40,6 +40,7 @@ if (RegExp.Match([a-zA-z])) {
 } else {
      console.log('Only letters are allowed')
 }
+}
 
 //check if last name contains only letters 
 //check if email contains appropraite email format
