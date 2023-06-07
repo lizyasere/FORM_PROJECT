@@ -1,12 +1,28 @@
-body {
+/* body {
     background-color: rgba(255, 173, 80, 0.74);
     font-weight: 500;
     font-family: sans-serif;
     font-size: 25px;
     height: 100%;
     width: 100%;
+} */
+
+/* table {
+    background-color: black;
+    color: #fff;
+    border: 0 0 2px;
+    border-radius: 50px;
+} */
+
+body {
+    background-color: springgreen;
+    color: black;
+    text-align: center;
+
 }
 
-input {
-    
+.Register-btn {
+    border: 1px solid black;
+    width: 50%;
 }
+
