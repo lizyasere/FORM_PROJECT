@@ -31,8 +31,30 @@ function ShowHide() {
     }
 }
 
-//Using Regex to check password Strength 
+//Todo: use regex to check requirements
+function CheckFirstname(firstname) {
 
+// check if firstname contains only letters 
+if (RegExp.Match([a-zA-z])) {
+    return 'firstname'
+} else {
+     console.log('Only letters are allowed')
+}
+
+//check if last name contains only letters 
+//check if email contains appropraite email format
+//check Password strength : check the following first; 
+// if password contains max of 8 characters 
+//if password contains at least one number 
+//if password contains a Capital letter 
+//if password contains a small letter 
+//if password contains a special character 
+//if password contains at least 8 characters, without all the requirement, password strength is weak
+//if it contains at most two of the requirements, then passowrd strenght is weak
+//if it contains at least two of the requirements and at most 3 of the requirements, then the password strength is medium 
+//if it contains at least 3 of the requirements and at most 4 of the requirements, then the password strength is Almost Strong
+//if it contains all the requirements, then password strength is excellent. 
+//print out user data on webpage
 
 
 
