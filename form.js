@@ -1,49 +1,88 @@
-// A function to check if passwords match 
+// A function to check if passwords match
 function confirmPassword() {
     let Pass1 = document.getElementById('pword');
     let pass2 = document.getElementById('confirm');
-
-
-if ((Pass1.value !== '') && (pass2.value !== '')) {
-    if (Pass1.value === pass2.value) {
-        document.getElementById('errMsg').innerHTML='password Match'
+    let errMsg = document.getElementById('errMsg');
+  
+    if (Pass1.value !== '' && pass2.value !== '') {
+      if (Pass1.value === pass2.value) {
+       errMsg.textContent = 'passwords Match';
+       errMsg.style.color = 'green';
+      } else {
+        errMsg.textContent = 'passwords does not match';
+        errMsg.style.color = 'red';
+      }
+    } else {
+      errMsg.textContent = '';
     }
-     else {
-        document.getElementById('errMsg').innerHTML='password does not match'
-     }
-}  else {
-    document.getElementById('errMsg').innerHTML = '';
-}
-}
-
-//A funtion to show or hide Password
-function ShowHide() {
+  };
+  
+  // A function to show or hide Password
+  function ShowHide() {
     let PW1 = document.getElementById('pword');
     let PW2 = document.getElementById('confirm');
-
+  
     if (PW1.type === 'password' && PW2.type === 'password') {
-        PW1.type = 'text';
-        PW2.type = 'text';
-    } 
-    else {
-        PW1.type = 'password';
-        PW2.type= 'password'
+      PW1.type = 'text';
+      PW2.type = 'text';
+    } else {
+      PW1.type = 'password';
+      PW2.type = 'password';
     }
-}
+  }
+  
+  // Validate form and print user data on the webpage
+  window.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('MyForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      var formData = new FormData(event.target); // Get the form data
+      var formOutput = document.getElementById('Formdata'); // Get the output element
+  
+      // Clear previous form data
+      formOutput.innerHTML = '';
+  
+      // Iterate over the form fields
+      for (var pair of formData.entries()) {
+        var fieldName = pair[0];
+        var fieldValue = pair[1];
 
-//Todo: use regex to check requirements
-function CheckFirstname(firstname) {
+        // Exclude password fields
+        if (fieldName !== 'Pword' && fieldName !== 'Confirm') {
+         formOutput.innerHTML  += fieldName + ': ' + fieldValue  + '<br>'; // Update output element with field name and value
+        }        
+      }
+    });
+  });
+  
 
-// check if firstname contains only letters 
-if (RegExp.Match([a-zA-z])) {
-    return 'firstname'
-} else {
-     console.log('Only letters are allowed')
-}
-}
+//todo: use regex to validate form
+//check if first name contains only letters
+//validate firstname
+function checkFirstName() {
+    let firstname = document.getElementById('fname').value;
+
+    //use regex to check if firstname contains only lettters
+    if(!/^[A-Za-z]+$/.test(firstname)) {
+        console.log('First name should contain only letters');
+    } else {
+        console.log('First name is valid');
+    }
+};
 
 //check if last name contains only letters 
-//check if email contains appropraite email format
+//validate lastname
+function checkLastName() {
+    let lastName = document.getElementById('lname').value;
+
+    //use regex to check if lastname contains only letters
+    if (!/^[A-Za-z]+$/.test(lastName)) {
+        console.log('Last name should contain only letters');
+    } else {
+        console.log('Last name is valid');
+    }
+};
+
 //check Password strength : check the following first; 
 // if password contains max of 8 characters 
 //if password contains at least one number 
@@ -55,7 +94,10 @@ if (RegExp.Match([a-zA-z])) {
 //if it contains at least two of the requirements and at most 3 of the requirements, then the password strength is medium 
 //if it contains at least 3 of the requirements and at most 4 of the requirements, then the password strength is Almost Strong
 //if it contains all the requirements, then password strength is excellent. 
-//print out user data on webpage
+//validate rememberMe on the form 
+
+
+  
 
 
 
