@@ -1,35 +1,35 @@
 // A function to check if passwords match
 function confirmPassword() {
-    let Pass1 = document.getElementById('pword');
-    let pass2 = document.getElementById('confirm');
-    let errMsg = document.getElementById('errMsg');
+    let Pass1 = document.getElementById('pword'); // Get the first password input element
+    let pass2 = document.getElementById('confirm'); // Get the confirm password input element
+    let errMsg = document.getElementById('errMsg');  // Get the error message element
   
-    if (Pass1.value !== '' && pass2.value !== '') {
-      if (Pass1.value === pass2.value) {
-       errMsg.textContent = 'passwords Match';
-       errMsg.style.color = 'green';
+    if (Pass1.value !== '' && pass2.value !== '') {  // Check if both password fields are not empty
+      if (Pass1.value === pass2.value) {  // If the passwords match
+       errMsg.textContent = 'passwords Match'; // Set the error message to indicate a match
+       errMsg.style.color = 'green';  // Set the color of the error message to green
       } else {
-        errMsg.textContent = 'passwords does not match';
-        errMsg.style.color = 'red';
+        errMsg.textContent = 'passwords does not match';  // Set the error message to indicate a mismatch
+        errMsg.style.color = 'red';  // Set the color of the error message to red
       }
     } else {
-      errMsg.textContent = '';
+      errMsg.textContent = '';  // Clear the error message if the password fields are empty
     }
   };
   
   // A function to show or hide Password
   function ShowHide() {
-    let PW1 = document.getElementById('pword');
-    let PW2 = document.getElementById('confirm');
+    let PW1 = document.getElementById('pword'); // Get the first password input element
+    let PW2 = document.getElementById('confirm'); // Get the confirm password input element
   
-    if (PW1.type === 'password' && PW2.type === 'password') {
-      PW1.type = 'text';
-      PW2.type = 'text';
+    if (PW1.type === 'password' && PW2.type === 'password') {   // Check if both password fields are currently of type 'password'
+      PW1.type = 'text';  // Change the type of the first password field to 'text' to show the entered value
+      PW2.type = 'text';   // Change the type of the confirm password field to 'text' to show the entered value
     } else {
-      PW1.type = 'password';
-      PW2.type = 'password';
+      PW1.type = 'password';  // Change the type of the first password field back to 'password' to hide the entered value
+      PW2.type = 'password';   // Change the type of the confirm password field back to 'password' to hide the entered value
     }
-  }
+  };
   
   // Validate form and print user data on the webpage
   window.addEventListener('DOMContentLoaded', function () {
