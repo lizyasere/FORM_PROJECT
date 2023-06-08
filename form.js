@@ -5,35 +5,49 @@ function confirmPassword() {
     let errMsg = document.getElementById('errMsg');  // Get the error message element
   
     if (Pass1.value !== '' && pass2.value !== '') {  // Check if both password fields are not empty
+
       if (Pass1.value === pass2.value) {  // If the passwords match
+        
        errMsg.textContent = 'passwords Match'; // Set the error message to indicate a match
        errMsg.style.color = 'green';  // Set the color of the error message to green
+
       } else {
+
         errMsg.textContent = 'passwords does not match';  // Set the error message to indicate a mismatch
         errMsg.style.color = 'red';  // Set the color of the error message to red
+
       }
     } else {
+
       errMsg.textContent = '';  // Clear the error message if the password fields are empty
+
     }
   };
   
+
   // A function to show or hide Password
   function ShowHide() {
     let PW1 = document.getElementById('pword'); // Get the first password input element
     let PW2 = document.getElementById('confirm'); // Get the confirm password input element
   
     if (PW1.type === 'password' && PW2.type === 'password') {   // Check if both password fields are currently of type 'password'
+
       PW1.type = 'text';  // Change the type of the first password field to 'text' to show the entered value
       PW2.type = 'text';   // Change the type of the confirm password field to 'text' to show the entered value
+
     } else {
+
       PW1.type = 'password';  // Change the type of the first password field back to 'password' to hide the entered value
       PW2.type = 'password';   // Change the type of the confirm password field back to 'password' to hide the entered value
+
     }
   };
   
   // Validate form and print user data on the webpage
   window.addEventListener('DOMContentLoaded', function () {
+
     document.getElementById('MyForm').addEventListener('submit', function (event) {
+
       event.preventDefault(); // Prevent the default form submission
   
       var formData = new FormData(event.target); // Get the form data
@@ -44,12 +58,15 @@ function confirmPassword() {
   
       // Iterate over the form fields
       for (var pair of formData.entries()) {
+
         var fieldName = pair[0];
         var fieldValue = pair[1];
 
         // Exclude password fields
         if (fieldName !== 'Pword' && fieldName !== 'Confirm') {
+
          formOutput.innerHTML  += fieldName + ': ' + fieldValue  + '<br>'; // Update output element with field name and value
+
         }        
       }
     });
@@ -60,12 +77,16 @@ function confirmPassword() {
 //check if first name contains only letters
 //validate firstname
 function checkFirstName() {
+
     let firstname = document.getElementById('fname').value;
 
     //use regex to check if firstname contains only lettters
     if(!/^[A-Za-z]+$/.test(firstname)) {
+
         console.log('First name should contain only letters');
+
     } else {
+
         console.log('First name is valid');
     }
 };
@@ -73,12 +94,16 @@ function checkFirstName() {
 //check if last name contains only letters 
 //validate lastname
 function checkLastName() {
+
     let lastName = document.getElementById('lname').value;
 
     //use regex to check if lastname contains only letters
     if (!/^[A-Za-z]+$/.test(lastName)) {
+
         console.log('Last name should contain only letters');
+
     } else {
+        
         console.log('Last name is valid');
     }
 };
